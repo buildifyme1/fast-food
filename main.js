@@ -1,5 +1,4 @@
 let cart = [];
-let total = 0;
 
 // ================= NAVBAR =================
 function toggleMenu(){
@@ -50,15 +49,16 @@ function showToast(message){
 // ================= ADD TO CART =================
 function addToCart(name, price){
 
-  let existing = cart.find(item => item.name === name);
+  let item = cart.find(p => p.name === name);
 
-  if(existing){
-    existing.qty += 1;
-  } else {
+  if(item){
+    item.qty++;
+  }else{
     cart.push({name, price, qty:1});
   }
 
   updateCart();
+  openCart();
 
   document.querySelector(".badge").innerText = cart.length;
 
@@ -80,14 +80,16 @@ function updateCart(){
 
   if(!cartItems || !totalBox) return;
 
+  let total = 0;
   cartItems.innerHTML = "";
-  total = 0;
 
   cart.forEach((item, index)=>{
+
     total += item.price * item.qty;
 
     cartItems.innerHTML += `
       <div class="cart-item">
+
         <div>
           <h4>${item.name}</h4>
           <p>${item.price} جنيه</p>
@@ -98,6 +100,9 @@ function updateCart(){
           <span>${item.qty}</span>
           <button onclick="plusQty(${index})">+</button>
         </div>
+
+        <button onclick="removeItem(${index})">🗑️</button>
+
       </div>
     `;
   });
@@ -109,7 +114,7 @@ function updateCart(){
 function minusQty(i){
   if(cart[i].qty > 1){
     cart[i].qty--;
-  } else {
+  }else{
     cart.splice(i,1);
   }
   updateCart();
@@ -117,5 +122,10 @@ function minusQty(i){
 
 function plusQty(i){
   cart[i].qty++;
+  updateCart();
+}
+
+function removeItem(i){
+  cart.splice(i,1);
   updateCart();
 }
