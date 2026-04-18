@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyper Market</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- 🔥 Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <span class="food">Food</span>
+  <span class="fast">Fast</span>
+  
+</div>
+
+  <!-- 🔥 Menu -->
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#">الرئيسية</a></li>
+    <li><a href="#">الأقسام</a></li>
+    <li><a href="#">العروض</a></li>
+    <li><a href="#">تواصل</a></li>
+  </ul>
+
+  <!-- 🔥 Icons -->
+  <div class="nav-icons">
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <div class="cart" onclick="openCart()">
+  <i class="fa-solid fa-cart-shopping"></i>
+  <span class="badge">0</span>
+    </div>
+
+    <!-- 🔥 Hamburger -->
+    <i class="fa-solid fa-bars menu-toggle" onclick="toggleMenu()"></i>
+  </div>
+</nav>
+
+<!------- hero ------->
+ <section class="hero">
+
+  <div class="hero-text">
+
+    <h1>كل احتياجاتك في مكان واحد </h1>
+
+    <p>
+      أفضل منتجات مجمدات – لحوم – مشروبات – سناكس بأفضل الأسعار
+    </p>
+
+    <button class="hero-btn">تسوق الآن</button>
+
+  </div>
+
+</section>
+
+<!-- categories -->
+<section class="categories">
+
+  <h2> تصفح الأقسام</h2>
+
+  <div class="categories-container">
+
+    <!-- مجمدات -->
+    <div class="category-card" onclick="filterCategory('frozen')">
+      <img src="https://images.unsplash.com/photo-1604908176997-125f25cc500f" alt="">
+      <h3> مجمدات</h3>
+    </div>
+
+    <!-- لحوم -->
+    <div class="category-card" onclick="filterCategory('meat')">
+      <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f" alt="">
+      <h3> لحوم</h3>
+    </div>
+
+    <!-- مشروبات -->
+    <div class="category-card" onclick="filterCategory('drinks')">
+      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" alt="">
+      <h3> مشروبات</h3>
+    </div>
+
+    <!-- سناكس -->
+    <div class="category-card" onclick="filterCategory('snacks')">
+      <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60" alt="">
+      <h3> سناكس</h3>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<section class="new-arrivals">
+
+  <h2> المنتجات الجديدة</h2>
+
+  <div class="new-container">
+
+    <div class="new-card">
+      <img src="https://images.unsplash.com/photo-1604908177522-040c5f3b8b2d" alt="">
+      <h3> دجاج متبل</h3>
+      <p>130 جنيه</p>
+      <button onclick="addToCart('دجاج متبل',130)"> إضافة للسلة</button>
+    </div>
+
+    <div class="new-card">
+      <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f" alt="">
+      <h3> لحم ضاني</h3>
+      <p>300 جنيه</p>
+      <button onclick="addToCart('لحم ضاني',300)"> إضافة للسلة</button>
+    </div>
+
+    <div class="new-card">
+      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" alt="">
+      <h3> عصير مانجو</h3>
+      <p>40 جنيه</p>
+      <button onclick="addToCart('عصير مانجو',40)"> إضافة للسلة</button>
+    </div>
+
+    <div class="new-card">
+      <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52" alt="">
+      <h3>شوكولاتة</h3>
+      <p>25 جنيه</p>
+      <button onclick="addToCart('شوكولاتة',25)"> إضافة للسلة</button>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 🛒 Overlay -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- 🛒 Bottom Sheet Cart -->
+<div class="cart-sheet" id="cartSheet">
+
+  <div class="cart-header">
+    <h2>🛒 سلة المشتريات</h2>
+    <span onclick="closeCart()" class="close">✖</span>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-footer">
+    <h3>الإجمالي: <span id="total">0</span> جنيه</h3>
+    <button class="checkout">إتمام الشراء</button>
+  </div>
+
+</div>
+
+</div>
+<div id="toast" class="toast">تمت الإضافة للسلة 🛒</div>
+
+<audio id="addSound" src="click.mp3" preload="auto"></audio>
+
+<script src="main.js"></script>
+</body>
+</html>
