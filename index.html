@@ -44,7 +44,7 @@
 </nav>
 
 <!------- hero ------->
- <section class="hero">
+ <section class="hero" id="home">
 
   <div class="hero-text">
 
@@ -53,131 +53,225 @@
     <p>
       أفضل منتجات مجمدات – لحوم – مشروبات – سناكس بأفضل الأسعار
     </p>
-
-    <button class="hero-btn">تسوق الآن</button>
-
-  </div>
-
-</section>
-
-<!-- categories -->
-<section class="categories">
-
-  <h2> تصفح الأقسام</h2>
-
-  <div class="categories-container">
-
-    <!-- مجمدات -->
-    <div class="category-card" onclick="filterCategory('frozen')">
-      <img src="" alt="">
-      <h3> مجمدات</h3>
-    </div>
-
-    <!-- لحوم -->
-    <div class="category-card" onclick="filterCategory('meat')">
-      <img src="" alt="">
-      <h3>********</h3>
-    </div>
-
-    <!-- مشروبات -->
-    <div class="category-card" onclick="filterCategory('drinks')">
-      <img src="" alt="">
-      <h3> مشروبات</h3>
-    </div>
-
-    <!-- سناكس -->
-    <div class="category-card" onclick="filterCategory('snacks')">
-      <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60" alt="">
-      <h3> سناكس</h3>
-    </div>
-
+       <a href="#categories" class="hero-btn">تسوق الآن</a>
   </div>
 
 </section>
 
 
-
-<section class="new-arrivals">
+<section class="products-section" id="new-products">
 
   <h2> المنتجات الجديدة</h2>
 
-  <div class="new-container">
+  <div class="products-grid">
 
-    <div class="new-card">
-      <img src="" alt="">
-      <h3> *****</h3>
-      <p>## جنيه</p>
-      <button onclick="addToCart('*****',130)"> إضافة للسلة</button>
-    </div>
-
-    <div class="new-card">
-      <img src="" alt="">
-      <h3> *****</h3>
-      <p>### جنيه</p>
-      <button onclick="addToCart('*****',300)"> إضافة للسلة</button>
-    </div>
-
-    <div class="new-card">
-      <img src="" alt="">
-      <h3>*****</h3>
-      <p>## جنيه</p>
-      <button onclick="addToCart('*****',40)"> إضافة للسلة</button>
-    </div>
-
-    <div class="new-card">
-      <img src="" alt="">
-      <h3>*****</h3>
-      <p>### جنيه</p>
-      <button onclick="addToCart('******',25)"> إضافة للسلة</button>
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<section class="best-sellers">
-
-  <h2> أفضل المبيعات</h2>
-
-  <div class="best-container">
-
-    <div class="best-card">
+    <div class="product-card">
+      <div class="badge-new">NEW</div>
       <img src="https://images.unsplash.com/photo-1604908177522-040c5f3b8b2d" alt="">
-      <h3>*****</h3>
-      <p>## جنيه</p>
-      <button onclick="addToCart('',120)"> إضافة للسلة</button>
+      <h3>استربس حار وبارد</h3>
+      <p>125 جنيه</p>
+      <button onclick="addToCart('استربس حار وبارد',125)">إضافة للسلة</button>
     </div>
 
-    <div class="best-card">
-      <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f" alt="">
-      <h3>*****</h3>
-      <p> ##جنيه</p>
-      <button onclick="addToCart('',250)"> إضافة للسلة</button>
+    <div class="product-card">
+      <div class="badge-new">NEW</div>
+      <img src="https://images.unsplash.com/photo-1605478901504-9a7c7b8f5a8e" alt="">
+      <h3>برجر ولعتين جامبو</h3>
+      <p>115 جنيه</p>
+      <button onclick="addToCart('برجر ولعتين جامبو',115)">إضافة للسلة</button>
     </div>
 
-    <div class="best-card">
-      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87" alt="">
-      <h3>*****</h3>
-      <p>## جنيه</p>
-      <button onclick="addToCart('*****',35)"> إضافة للسلة</button>
+    <div class="product-card">
+      <div class="badge-new">NEW</div>
+      <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75" alt="">
+      <h3>بطاطس بومفريت</h3>
+      <p>50 جنيه</p>
+      <button onclick="addToCart('بطاطس بومفريت',50)">إضافة للسلة</button>
     </div>
 
-    <div class="best-card">
-      <img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52" alt="">
-      <h3>*****</h3>
-      <p> ## جنيه</p>
-      <button onclick="addToCart('*****',25)">إضافة للسلة</button>
+    <div class="product-card">
+      <div class="badge-new">NEW</div>
+      <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec" alt="">
+      <h3>مخبوزات طازة</h3>
+      <p>40 جنيه</p>
+      <button onclick="addToCart('مخبوزات طازة',40)">إضافة للسلة</button>
     </div>
 
   </div>
 
 </section>
 
-<section class="about">
 
-  <h2><i class="fa-solid fa-circle-info"></i> من نحن</h2>
+<section class="products-section" id="best">
+
+  <h2> الأكثر مبيعًا</h2>
+
+  <div class="products-grid">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1604908177522-040c5f3b8b2d">
+      <h3>استربس ولعتين</h3>
+      <p>120 جنيه</p>
+      <button onclick="addToCart('استربس ولعتين',120)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1605478901504-9a7c7b8f5a8e">
+      <h3>برجر فراخ</h3>
+      <p>110 جنيه</p>
+      <button onclick="addToCart('برجر فراخ',110)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75">
+      <h3>بطاطس كرينكل</h3>
+      <p>50 جنيه</p>
+      <button onclick="addToCart('بطاطس كرينكل',50)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec">
+      <h3>مخبوزات</h3>
+      <p>35 جنيه</p>
+      <button onclick="addToCart('مخبوزات',35)">إضافة</button>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="products-section" id="strips">
+
+  <h2>🍗 قسم الاستربس</h2>
+
+  <div class="strips-scroll">
+
+    <div class="product-card">
+      <img src="ولعتين1.jpeg">
+      <h3>استربس ولعتين</h3>
+      <p>120 جنيه</p>
+      <button onclick="chooseSpice('استربس ولعتين',120)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="سوجود.jpeg">
+      <h3>استربس سوجود</h3>
+      <p>118 جنيه</p>
+      <button onclick="chooseSpice('استربس سوجود',118)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="بريكه.jpeg">
+      <h3>استربس بريكه</h3>
+      <p>122 جنيه</p>
+      <button onclick="chooseSpice('استربس بريكه',122)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="الحريف.jpeg">
+      <h3>استربس الحريف</h3>
+      <p>125 جنيه</p>
+      <button onclick="chooseSpice('استربس الحريف',125)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="سايب.jpeg">
+      <h3>استربس سايب</h3>
+      <p>115 جنيه</p>
+      <button onclick="chooseSpice('استربس سايب',115)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="اطياب.jpeg">
+      <h3>استربس أطياب</h3>
+      <p>120 جنيه</p>
+      <button onclick="chooseSpice('استربس أطياب',120)">إضافة</button>
+    </div>
+
+  </div>
+
+</section>
+
+<div id="spiceModal" class="modal">
+
+  <div class="modal-content">
+
+    <h3>اختار النوع</h3>
+
+    <button onclick="confirmAdd('حار')"> حار</button>
+    <button onclick="confirmAdd('بارد')">بارد</button>
+
+    <br><br>
+
+    <button onclick="closeModal()">إلغاء</button>
+
+  </div>
+
+</div>
+
+<section class="products-section" id="burger-meat">
+
+  <h2>🍔 البرجر والكفتة</h2>
+
+  <div class="products-scroll">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75">
+      <h3>برجر جاست جبنة</h3>
+      <p>120 جنيه</p>
+      <button onclick="addToCart('برجر جاست جبنة',120)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1605478901504-9a7c7b8f5a8e">
+      <h3>برجر جاست ساده</h3>
+      <p>110 جنيه</p>
+      <button onclick="addToCart('برجر جاست ساده',110)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+      <h3>برجر ميتكو جامبو</h3>
+      <p>130 جنيه</p>
+      <button onclick="addToCart('برجر ميتكو جامبو',130)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1604908177522-040c5f3b8b2d">
+      <h3>برجر ميتكو ميني</h3>
+      <p>90 جنيه</p>
+      <button onclick="addToCart('برجر ميتكو ميني',90)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1606756790138-261d2b21cd75">
+      <h3>كفتة نوريانو فراخ</h3>
+      <p>125 جنيه</p>
+      <button onclick="addToCart('كفتة نوريانو فراخ',125)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1605478901504-9a7c7b8f5a8e">
+      <h3>كفتة مشوية نوريانو</h3>
+      <p>130 جنيه</p>
+      <button onclick="addToCart('كفتة مشوية نوريانو',130)">إضافة</button>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec">
+      <h3>كفتة جاست</h3>
+      <p>120 جنيه</p>
+      <button onclick="addToCart('كفتة جاست',120)">إضافة</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- about -->
+<section class="about" id="about">
+
+  <h2><i class="fa-solid fa-circle-info"></i> Fast Food</h2>
 
   <div class="about-container">
 
@@ -222,24 +316,24 @@
 
     <!-- Logo -->
     <div class="footer-box">
-      <h2><i class="fa-solid fa-store"></i> Hyper Market</h2>
+      <h2><i class="fa-solid fa-store"></i> Fast Food</h2>
       <p>كل احتياجاتك اليومية في مكان واحد بأفضل جودة وأسعار تنافسية.</p>
     </div>
 
     <!-- روابط -->
     <div class="footer-box">
       <h3>روابط سريعة</h3>
-      <a href="#"><i class="fa-solid fa-house"></i> الرئيسية</a>
-      <a href="#"><i class="fa-solid fa-box"></i> المنتجات</a>
-      <a href="#"><i class="fa-solid fa-tags"></i> العروض</a>
-      <a href="#"><i class="fa-solid fa-circle-info"></i> من نحن</a>
+      <a href="#home"><i class="fa-solid fa-house"></i> الرئيسية</a>
+      <a href="#categories"><i class="fa-solid fa-box"></i> المنتجات</a>
+      <a href="#new-arrivals"><i class="fa-solid fa-tags"></i> العروض</a>
+      <a href="#about"><i class="fa-solid fa-circle-info"></i> من نحن</a>
     </div>
 
     <!-- تواصل -->
     <div class="footer-box">
       <h3>تواصل معنا</h3>
-      <p><i class="fa-solid fa-phone"></i> 01000000000</p>
-      <p><i class="fa-solid fa-location-dot"></i> الفرع الرئيسي</p>
+      <p><i class="fa-solid fa-phone"></i> 01055790060</p>
+      <p><i class="fa-solid fa-location-dot"></i> ابوعلي - بجوار ماركت اليماني</p>
     </div>
 
     <!-- تابعنا -->
@@ -248,11 +342,11 @@
 
       <div class="social">
 
-        <a href="#" class="facebook">
+        <a href="https://www.facebook.com/share/g/1EAbvGdrDE/" class="facebook">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
 
-        <a href="https://wa.me/201000000000" class="whatsapp">
+        <a href="https://wa.me/201055790060" class="whatsapp">
           <i class="fa-brands fa-whatsapp"></i>
         </a>
 
@@ -267,80 +361,10 @@
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 جميع الحقوق محفوظة | Hyper Market</p>
+    <p>© 2026 جميع الحقوق محفوظة | Fast Food</p>
   </div>
 
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- 🔥 Overlay -->
 <div class="cart-overlay" id="cartOverlay"></div>

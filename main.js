@@ -129,3 +129,27 @@ function removeItem(i){
   cart.splice(i,1);
   updateCart();
 }
+
+
+let selectedProduct = null;
+
+// فتح الاختيار
+function chooseSpice(name, price){
+  selectedProduct = {name, price};
+  document.getElementById("spiceModal").style.display = "flex";
+}
+
+// إغلاق
+function closeModal(){
+  document.getElementById("spiceModal").style.display = "none";
+}
+
+// تأكيد الإضافة
+function confirmAdd(type){
+
+  let finalName = selectedProduct.name + " (" + type + ")";
+
+  addToCart(finalName, selectedProduct.price);
+
+  closeModal();
+}
