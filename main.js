@@ -1,4 +1,20 @@
+window.addEventListener("load", function(){
+
+  setTimeout(()=>{
+    const loader = document.getElementById("loadingScreen");
+    loader.style.opacity = "0";
+    loader.style.transition = "0.5s";
+
+    setTimeout(()=>{
+      loader.style.display = "none";
+    },500);
+
+  },2000); // مدة ظهور اللودينج
+});
+
+
 let cart = [];
+
 
 // ================= NAVBAR =================
 function toggleMenu(){
@@ -14,12 +30,6 @@ document.addEventListener("click", function(e){
   }
 });
 
-document.querySelectorAll(".nav-links a").forEach(link=>{
-  link.addEventListener("click", ()=>{
-    document.getElementById("navLinks").classList.remove("active");
-  });
-});
-
 // ================= CART OPEN / CLOSE =================
 function openCart(){
   document.getElementById("cartSheet").classList.add("active");
@@ -31,25 +41,10 @@ function closeCart(){
   document.getElementById("cartOverlay").style.display = "none";
 }
 
-document.getElementById("cartOverlay").onclick = closeCart;
-
-// ================= TOAST =================
-function showToast(message){
-  const toast = document.getElementById("toast");
-  if(!toast) return;
-
-  toast.innerText = message;
-  toast.classList.add("show");
-
-  setTimeout(()=>{
-    toast.classList.remove("show");
-  },2000);
-}
-
 // ================= ADD TO CART =================
 function addToCart(name, price){
 
-  let item = cart.find(p => p.name === name);
+  let item = cart.find(i => i.name === name);
 
   if(item){
     item.qty++;
@@ -59,37 +54,25 @@ function addToCart(name, price){
 
   updateCart();
   openCart();
-
-  document.querySelector(".badge").innerText = cart.length;
-
-  showToast("تمت إضافة " + name + " 🛒");
-
-  // 🔊 Sound
-  const sound = document.getElementById("addSound");
-  if(sound){
-    sound.currentTime = 0;
-    sound.play().catch(()=>{});
-  }
 }
 
 // ================= UPDATE CART =================
 function updateCart(){
 
-  let cartItems = document.getElementById("cartItems");
-  let totalBox = document.getElementById("total");
+  const container = document.getElementById("cartItems");
+  const totalBox = document.getElementById("total");
+  const countBox = document.getElementById("cartCount");
 
-  if(!cartItems || !totalBox) return;
+  container.innerHTML = "";
 
   let total = 0;
-  cartItems.innerHTML = "";
 
   cart.forEach((item, index)=>{
 
     total += item.price * item.qty;
 
-    cartItems.innerHTML += `
+    container.innerHTML += `
       <div class="cart-item">
-
         <div>
           <h4>${item.name}</h4>
           <p>${item.price} جنيه</p>
@@ -101,16 +84,16 @@ function updateCart(){
           <button onclick="plusQty(${index})">+</button>
         </div>
 
-        <button onclick="removeItem(${index})">🗑️</button>
-
+        <button onclick="removeItem(${index})">🗑</button>
       </div>
     `;
   });
 
   totalBox.innerText = total;
+  countBox.innerText = cart.length;
 }
 
-// ================= QUANTITY =================
+// ================= QTY CONTROL =================
 function minusQty(i){
   if(cart[i].qty > 1){
     cart[i].qty--;
@@ -130,30 +113,69 @@ function removeItem(i){
   updateCart();
 }
 
+// ================= CHECKOUT FORM =================
+function openForm(){
 
-let selectedProduct = null;
+  if(cart.length === 0){
+    alert("🛒 السلة فاضية");
+    return;
+  }
 
-// فتح الاختيار
-function chooseSpice(name, price){
-  selectedProduct = {name, price};
-  document.getElementById("spiceModal").style.display = "flex";
+  document.getElementById("checkoutForm").style.display = "flex";
 }
 
-// إغلاق
-function closeModal(){
-  document.getElementById("spiceModal").style.display = "none";
+function closeForm(){
+  document.getElementById("checkoutForm").style.display = "none";
 }
 
-// تأكيد الإضافة
-function confirmAdd(type){
+// ================= SEND TO WHATSAPP =================
+function sendToWhatsApp(){
 
-  let finalName = selectedProduct.name + " (" + type + ")";
+  let name = document.getElementById("custName").value;
+  let phone = document.getElementById("custPhone").value;
+  let address = document.getElementById("custAddress").value;
 
-  addToCart(finalName, selectedProduct.price);
+  if(!name || !phone || !address){
+    alert("❌ املأ البيانات");
+    return;
+  }
 
-  closeModal();
+  let total = 0;
+
+  let itemsText = cart.map(i=>{
+    total += i.price * i.qty;
+    return `• ${i.name} x${i.qty} = ${i.price * i.qty}`;
+  }).join("\n");
+
+  let message = `
+🛒 طلب جديد
+
+👤 الاسم: ${name}
+📞 الهاتف: ${phone}
+📍 العنوان: ${address}
+
+${itemsText}
+
+💰 الإجمالي: ${total} جنيه
+`;
+
+  let whatsappNumber = "201145320595"; // غير الرقم ده لرقمك
+
+  window.open(
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+    "_blank"
+  );
+
+  // تنظيف
+  cart = [];
+  updateCart();
+  closeForm();
+  closeCart();
+
+  document.getElementById("custName").value = "";
+  document.getElementById("custPhone").value = "";
+  document.getElementById("custAddress").value = "";
 }
-
 const products = {
 
   // 🍗 استربس و فراخ
@@ -205,10 +227,10 @@ const products = {
 
   // 🥖 مخبوزات و عيش
   bakery: [
-    {name:"عيش ماك", price:55,img:""},
-    {name:"عيش كريب", price:25,img:""},
-    {name:"عيش سوري", price:25,img:""},
-    {name:"توست رده", price:60,img:""},
+    {name:"عيش ماك", price:55,img:"عيش-ماك.jpg"},
+    {name:"عيش كريب", price:25,img:"كريب.jpg"},
+    {name:"عيش سوري", price:25,img:"سوري.jpg"},
+    {name:"توست رده", price:60,img:"رده.jpg"},
     {name:"توست بدون سكر", price:62,img:""},
     {name:"توست شوفان", price:70,img:""},
     {name:"توست عادي", price:55,img:""},

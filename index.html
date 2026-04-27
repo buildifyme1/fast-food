@@ -13,6 +13,22 @@
 
 <body>
 
+  <div id="loadingScreen">
+
+  <div class="loading-box">
+
+    <h1> Fast Food</h1>
+
+    <div class="progress-bar">
+      <div class="progress"></div>
+    </div>
+
+    <p>جاري التحميل...</p>
+
+  </div>
+
+</div>
+
   <!-- 🔥 Navbar -->
 <nav class="navbar">
   <div class="logo">
@@ -53,7 +69,7 @@
     <p>
       أفضل منتجات مجمدات – لحوم – مشروبات – سناكس بأفضل الأسعار
     </p>
-       <a href="#categories" class="hero-btn">تسوق الآن</a>
+       <a href="#" class="hero-btn">تسوق الآن</a>
   </div>
 
 </section>
@@ -139,7 +155,7 @@
 
 </section>
 <!-- الأقسام -->
-<div class="main-categories">
+<div class="main-categories" id="main-categories">
 
   <div class="cat active" onclick="showCategory('strips', this)">
     <img src="سايب.jpeg">
@@ -299,32 +315,55 @@
 
 </footer>
 
-<!-- 🔥 Overlay -->
-<div class="cart-overlay" id="cartOverlay"></div>
+<!-- 🔥 زر فتح السلة -->
+<div class="cart-btn" onclick="openCart()">
+  🛒 <span id="cartCount">0</span>
+</div>
 
-<!-- 🛒 Bottom Sheet Cart -->
+<!-- 🛒 Overlay -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+
+<!-- 🧾 السلة -->
 <div class="cart-sheet" id="cartSheet">
 
-  <!-- Header -->
   <div class="cart-header">
-    <h2>🛒 سلة المشتريات</h2>
-    <span class="close" onclick="closeCart()">✖</span>
+    <h2>🛒 السلة</h2>
+    <span onclick="closeCart()">✖</span>
   </div>
 
-  <!-- Cart Items -->
   <div id="cartItems"></div>
 
-  <!-- Footer -->
   <div class="cart-footer">
     <h3>الإجمالي: <span id="total">0</span> جنيه</h3>
-    <button class="checkout">إتمام الشراء</button>
+  <button onclick="openForm()">إتمام الشراء</button>
   </div>
 
 </div>
+
+<!-- 📦 فورم البيانات -->
+<div class="checkout-form" id="checkoutForm">
+
+  <div class="form-box">
+    <h3> بيانات الطلب</h3>
+
+    <input id="custName" placeholder="الاسم">
+    <input id="custPhone" placeholder="رقم الهاتف">
+    <input id="custAddress" placeholder="العنوان">
+
+    <button onclick="sendToWhatsApp()">تأكيد الطلب</button>
+    <button onclick="closeForm()">إلغاء</button>
+
+  </div>
+
+</div>
+
+
+
 
 
 </div>
 <div id="toast" class="toast">تمت الإضافة للسلة 🛒</div>
+
 
 <audio id="addSound" src="click.mp3" preload="auto"></audio>
 
