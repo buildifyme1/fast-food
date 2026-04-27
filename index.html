@@ -49,10 +49,10 @@
   <div class="nav-icons">
     <i class="fa-solid fa-magnifying-glass"></i>
 
-    <div class="cart" onclick="openCart()">
+    <div class="nav-cart" onclick="openCart()">
   <i class="fa-solid fa-cart-shopping"></i>
-  <span class="badge">0</span>
-    </div>
+  <span id="cartCount">0</span>
+</div>
 
     <!-- 🔥 Hamburger -->
     <i class="fa-solid fa-bars menu-toggle" onclick="toggleMenu()"></i>
@@ -69,7 +69,7 @@
     <p>
       أفضل منتجات مجمدات – لحوم – مشروبات – سناكس بأفضل الأسعار
     </p>
-       <a href="#main-categories" class="hero-btn">تسوق الآن</a>
+       <a href="#" class="hero-btn">تسوق الآن</a>
   </div>
 
 </section>
@@ -184,7 +184,7 @@
 
   <div class="cat" onclick="showCategory('bakery', this)">
     <img src="عيش.jpg">
-    <span>عيش</span>
+    <span>المخبوزات</span>
   </div>
 
   <div class="cat" onclick="showCategory('cheese', this)">
@@ -316,6 +316,7 @@
 </footer>
 
 
+
 <!-- 🛒 Overlay -->
 <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 
@@ -356,10 +357,7 @@
 
 
 
-
-</div>
-<div id="toast" class="toast">تمت الإضافة للسلة 🛒</div>
-
+<div id="toast"></div>
 
 <audio id="addSound" src="click.mp3" preload="auto"></audio>
 

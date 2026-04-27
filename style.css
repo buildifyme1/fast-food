@@ -74,6 +74,47 @@ body{
   color:#6b7280;
 }
 
+.nav-cart{
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  color: #16a34a; /* أخضر الموقع */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-cart i{
+  font-size: 22px;
+}
+
+/* العداد */
+#cartCount{
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #16a34a;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.nav-cart.pop{
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.3);}
+  100%{transform: scale(1);}
+}
+
 /* ================= NAVBAR ================= */
 .navbar{
   display:flex;
@@ -338,27 +379,26 @@ body{
   cursor:pointer;
 }
 
-/* ================= TOAST ================= */
-.toast{
-  position:fixed;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  background:#27ae60;
-  color:#fff;
-  padding:12px 20px;
-  border-radius:8px;
-  font-size:15px;
-  opacity:0;
-  visibility:hidden;
-  transition:0.4s;
-  z-index:2000;
+#toast{
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background: #16a34a;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.4s;
+  z-index: 99999;
 }
 
-.toast.show{
-  opacity:1;
-  visibility:visible;
-  transform:translateX(-50%) translateY(-10px);
+/* تظهر */
+#toast.show{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ================= BROWSE ================= */

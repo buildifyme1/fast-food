@@ -41,6 +41,7 @@ function closeCart(){
   document.getElementById("cartOverlay").style.display = "none";
 }
 
+
 // ================= ADD TO CART =================
 function addToCart(name, price){
 
@@ -53,7 +54,24 @@ function addToCart(name, price){
   }
 
   updateCart();
-  openCart();
+
+  showToast("🛒 تم إضافة " + name + " إلى السلة");
+
+  // 🔊 تشغيل الصوت
+  const sound = document.getElementById("addSound");
+  if(sound){
+    sound.currentTime = 0; // يعيد الصوت من البداية
+    sound.play().catch(()=>{});
+  }
+
+  // 🎯 أنيميشن السلة
+  const navCart = document.querySelector(".nav-cart");
+  if(navCart){
+    navCart.classList.add("pop");
+    setTimeout(()=>{
+      navCart.classList.remove("pop");
+    },300);
+  }
 }
 
 // ================= UPDATE CART =================
@@ -66,10 +84,12 @@ function updateCart(){
   container.innerHTML = "";
 
   let total = 0;
+  let count = 0;
 
   cart.forEach((item, index)=>{
 
     total += item.price * item.qty;
+    count += item.qty;
 
     container.innerHTML += `
       <div class="cart-item">
@@ -90,10 +110,10 @@ function updateCart(){
   });
 
   totalBox.innerText = total;
-  countBox.innerText = cart.length;
+  countBox.innerText = count;
 }
 
-// ================= QTY CONTROL =================
+// ================= MINUS =================
 function minusQty(i){
   if(cart[i].qty > 1){
     cart[i].qty--;
@@ -103,14 +123,31 @@ function minusQty(i){
   updateCart();
 }
 
+// ================= PLUS =================
 function plusQty(i){
   cart[i].qty++;
   updateCart();
 }
 
+// ================= REMOVE =================
 function removeItem(i){
   cart.splice(i,1);
   updateCart();
+}
+
+// ================= TOAST =================
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  if(!toast) return;
+
+  toast.innerText = message;
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },2000);
 }
 
 // ================= CHECKOUT FORM =================
@@ -176,6 +213,8 @@ ${itemsText}
   document.getElementById("custPhone").value = "";
   document.getElementById("custAddress").value = "";
 }
+
+
 const products = {
 
   // 🍗 استربس و فراخ
@@ -353,3 +392,14 @@ function showCategory(cat, el){
 // أول تحميل
 showCategory("strips", document.querySelector(".cat"));
 
+function showToast(message){
+
+  const toast = document.getElementById("toast");
+
+  toast.innerText = message;
+  toast.classList.add("show");
+
+  setTimeout(()=>{
+    toast.classList.remove("show");
+  },2000);
+}
