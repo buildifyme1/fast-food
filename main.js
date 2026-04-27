@@ -159,7 +159,7 @@ ${itemsText}
 💰 الإجمالي: ${total} جنيه
 `;
 
-  let whatsappNumber = "201145320595"; // غير الرقم ده لرقمك
+  let whatsappNumber = "201055790060"; // غير الرقم ده لرقمك
 
   window.open(
     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
