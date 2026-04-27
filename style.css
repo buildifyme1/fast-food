@@ -608,6 +608,90 @@ body{
 }
 
 
+.main-categories{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:10px;
+}
+
+.cat{
+  min-width:90px;
+  text-align:center;
+  cursor:pointer;
+  opacity:0.6;
+  transform:scale(0.95);
+  transition:0.3s;
+}
+
+.cat img{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  object-fit:cover;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cat span{
+  display:block;
+  font-size:12px;
+  margin-top:5px;
+}
+
+.cat.active{
+  opacity:1;
+  transform:scale(1.1);
+}
+
+/* 🔥 Animation عند تغيير القسم */
+.products-section{
+  display:none;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.4s ease;
+}
+
+.products-section.active-section{
+  display:block;
+  animation:fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+.products-scroll{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding:10px;
+}
+
+.product-card{
+  min-width:180px;
+  background:#fff;
+  border-radius:15px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  padding:10px;
+  text-align:center;
+}
+
+.product-card img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
 /* ===== strips ===== */
 
 /* ================= SECTION ================= */
@@ -1023,3 +1107,184 @@ body{
 .facebook{ background:#1877f2; }
 .whatsapp{ background:#25D366; }
 .tiktok{ background:#000; }
+
+
+/* 🌿 اللون الأساسي */
+:root{
+  --main-green:#2ecc71;
+  --light-bg:#f7fdf9;
+}
+
+/* 📦 القسم */
+.new-section{
+  padding:20px;
+  background:var(--light-bg);
+}
+
+/* 🔥 الهيدر */
+.new-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.new-header h2{
+  font-size:20px;
+  color:#222;
+}
+
+.new-header span{
+  font-size:12px;
+  color:var(--main-green);
+}
+
+/* 📜 سكرول */
+.new-scroll{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+  padding-bottom:10px;
+}
+
+/* 🧾 كارت */
+.new-product{
+  min-width:200px;
+  background:#fff;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+.new-product:hover{
+  transform:translateY(-5px);
+}
+
+/* 🖼️ صورة */
+.new-product img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+}
+
+/* ℹ️ المعلومات */
+.info{
+  padding:10px;
+}
+
+.info h3{
+  font-size:14px;
+  margin-bottom:5px;
+}
+
+.info p{
+  color:var(--main-green);
+  font-weight:bold;
+}
+
+/* 🟢 زر */
+.info button{
+  width:100%;
+  padding:8px;
+  margin-top:8px;
+  border:none;
+  background:var(--main-green);
+  color:#fff;
+  border-radius:8px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.info button:hover{
+  opacity:0.9;
+}
+
+
+/* 📦 القسم */
+.best-section{
+  padding:20px;
+  background:#f7fdf9;
+}
+
+/* 🔥 الهيدر */
+.best-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.best-header h2{
+  font-size:20px;
+}
+
+.best-header span{
+  color:#2ecc71;
+  font-size:12px;
+}
+
+/* 📜 سكرول */
+.best-scroll{
+  display:flex;
+  gap:15px;
+  overflow-x:auto;
+}
+
+/* 🧾 الكارت */
+.best-product{
+  min-width:170px;
+  background:#fff;
+  border-radius:15px;
+  padding:10px;
+  text-align:center;
+  position:relative;
+  box-shadow:0 5px 15px rgba(0,0,0,0.08);
+  transition:.3s;
+}
+
+.best-product:hover{
+  transform:scale(1.05);
+}
+
+/* 🖼️ صورة */
+.best-product img{
+  width:100%;
+  height:120px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+/* 🔥 بادج */
+.best-badge{
+  position:absolute;
+  top:8px;
+  left:8px;
+  background:#2ecc71;
+  color:#fff;
+  padding:4px 8px;
+  border-radius:6px;
+  font-size:12px;
+}
+
+/* 📝 نص */
+.best-product h3{
+  font-size:14px;
+  margin:8px 0;
+}
+
+.best-product p{
+  color:#2ecc71;
+  font-weight:bold;
+}
+
+/* 🟢 زر */
+.best-product button{
+  width:100%;
+  padding:8px;
+  border:none;
+  background:#2ecc71;
+  color:#fff;
+  border-radius:8px;
+  cursor:pointer;
+}
