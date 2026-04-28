@@ -252,102 +252,84 @@ const products = {
 
   // 🍟 بطاطس
   fries: [
-    {name:"بطاطس كرينكل", price:155,img:""},
-    {name:"بطاطس الوميت", price:155,img:""},
-    {name:"بطاطس بوم فريت", price:155,img:""},
-    {name:"بطاطس فريسكس", price:120,img:""}
+    {name:"بطاطس كرينكل", price:155,img:"كرينكل.jpg"},
+    {name:"بطاطس الوميت", price:155,img:"الوميت.jpg"},
+    {name:"بطاطس بوم فريت", price:155,img:"بومفريت.jpg"},
   ],
 
   // 🍤 جمبري
   seafood: [
-    {name:"جمبري ولعتين", price:700},
-    {name:"جمبري وزن", price:700,img:""}
+    {name:"جمبري ولعتين", price:700,img:"جمبريكرسبي.jpeg"},
+    {name:"جمبري وزن", price:700,img:"جمبري.jpg"}
   ],
 
   // 🥖 مخبوزات و عيش
   bakery: [
     {name:"عيش ماك", price:55,img:"عيش-ماك.jpg"},
-    {name:"عيش كريب", price:25,img:"كريب.jpg"},
+    {name:"عيش كريب", price:25,img:"كريب.jpeg"},
     {name:"عيش سوري", price:25,img:"سوري.jpg"},
     {name:"توست رده", price:60,img:"رده.jpg"},
-    {name:"توست بدون سكر", price:62,img:""},
-    {name:"توست شوفان", price:70,img:""},
-    {name:"توست عادي", price:55,img:""},
-    {name:"توست حليب", price:60,img:""}
+    {name:"توست بدون سكر", price:62,img:"توست1.jpg"},
+    {name:"توست شوفان", price:70,img:"توست-شوفان.png"},
+    {name:"توست عادي", price:55,img:"توست.jpg"},
+    {name:"تورتيلا جامبو", price:55,img:"تورتيلا جامبو.jpg"},
+    {name:"توست حليب", price:60,img:"توست-حليب.jpg"}
   ],
 
   // 🧀 أجبان و إضافات
   cheese: [
-    {name:"موزريلا الحريف كيلو", price:185},
-    {name:"موزريلا الحريف نص", price:85},
-    {name:"موزريلا الاطباء نص", price:90,img:"اطياب.jpeg"},
-    {name:"شرايح شيدر", price:15}
+    {name:"موزريلا الحريف كيلو", price:185,img:"موزريلا-الحريف.jpg"},
+    {name:"موزريلا الحريف نص", price:85,img:"موزريلا-الحريف.jpg"},
+    {name:"موزريلا الاطباء نص", price:90,img:"الاطباء.jpg"},
+    {name:"شرايح شيدر", price:15,img:"شيدر.jpg"},
+        {name:"ميكس الحمد", price:70,img:"ميكس-الحمد.jpg"},
   ],
 
   // 🥫 صوصات
   sauces: [
-    {name:"صوص شيدر غازي", price:65},
-    {name:"صوص تكساس ايلو كبير", price:80},
-    {name:"صوص تكساس ايلو صغير", price:55},
-    {name:"صوص توميه", price:50},
-    {name:"صوص رانش", price:55},
-    {name:"صوص باربكيو", price:45},
-    {name:"كاتشب كبير", price:45},
-    {name:"كاتشب صغير", price:30},
-    {name:"مايونيز ايلو", price:55},
-    {name:"كاتشب ولعتين كيلو", price:70},
-    {name:"باربكيو ولعتين كيلو", price:80},
-    {name:"باتر رانش ميلك", price:65},
-    {name:"الف جزيره", price:50},
-    {name:"سويت تشيلي", price:50},
-    {name:"هوت صوص ولعتين", price:40}
+    {name:"صوص شيدر غازي", price:65,img:"شيدر-صوص.jpg"},
+    {name:"صوص تكساس ايلو كبير", price:80,img:"تكساس-كبير.jpg"},
+    {name:"صوص تكساس ايلو صغير", price:55,img:"تكساس-صغير.jpg"},
+    {name:"صوص توميه", price:50,img:"نوميه.jpg"},
+    {name:"صوص رانش", price:55,img:"رانش.jpg"},
+    {name:"صوص باربكيو", price:45,img:"باربيكيو.jpg"},
+    {name:"كاتشب كبير", price:45,img:"كاتشب-كبير.jpg"},
+    {name:"كاتشب صغير", price:30,img:"كاتشب-صغير.jpg"},
+    {name:"مايونيز ايلو", price:55,img:"مايونيز.jpg"},
+    {name:"كاتشب ولعتين كيلو", price:70,img:"كاتشب-ولعتين.jpg"},
+    {name:"باربكيو ولعتين كيلو", price:80,img:"باربيكيو-ولعتين.jpg"},
+    {name:"باتر رانش ميلك", price:65,img:"بتر.jpg"},
+    {name:"الف جزيره", price:50,img:"الف.jpg"},
+    {name:"سويت تشيلي", price:50,img:"سويت.jpg"},
+    {name:"تكساس ولعتين كيلو", price:130,img:"تكساس-ولعتين.jpg"},
+    {name:"هوت صوص ولعتين", price:40,img:"هوت.jpg"}
   ],
 
   // 🛒 ماركت و بقالة
   grocery: [
-    {name:"رز بسمتي", price:100},
-    {name:"زيتون", price:300},
-    {name:"خل كبير", price:20},
-    {name:"خل صغير", price:10},
-    {name:"عرض عسل", price:90},
-    {name:"زعتر سوري", price:40},
-    {name:"مكرونه بنا", price:15},
-    {name:"مكرونه تمن", price:15},
-    {name:"مكرونه سباجتي", price:15},
-    {name:"لسان العصفور", price:15},
-    {name:"شعريه", price:15}
+    {name:"رز بسمتي", price:100,img:"رز-بسمتي.jpg"},
+    {name:"زيتون", price:300,img:"زيتون.jpg"},,
+    {name:"عرض عسل", price:90,img:"عسل-اسود.jpg"},
+    {name:"زعتر سوري", price:40,img:"زعتر.jpg"},
+    {name:"مكرونه بنا", price:15,img:"بيا.jpg"},
+    {name:"مكرونه سباجتي", price:15,img:"اسباجتي.jpg"},
+    {name:"لسان العصفور", price:15,img:"لسانعصفور.jpg"},
+    {name:"شعريه", price:15,img:"شعريه.jpg"},
+        {name:"صلصله بيتزا", price:45,img:"صلصه.jpg"},
+    {name:"صلصه بست", price:30,img:"بست.jpg"},
   ],
 
   // 🥗 إضافات و متنوع
   extras: [
-    {name:"ورق عنب", price:45},
-    {name:"مشروم", price:50},
-    {name:"ميكس الحمد", price:70},
-    {name:"ميكس الاطباء", price:90},
-    {name:"ممبار", price:180},
-    {name:"صلصله بيتزا", price:45},
-    {name:"قواعد بيتزا", price:50},
-    {name:"صلصه بست", price:30},
-    {name:"دقيق حبه كامله", price:60},
-    {name:"دقيق اسمر", price:60},
-    {name:"دقيق شوفان", price:95},
-    {name:"دقيق شعير", price:65},
-    {name:"دقيق ذره اصفر", price:60},
-    {name:"سبريد بلبن نص", price:140},
-    {name:"سبريد بلبن كيلو", price:240},
-    {name:"سبريد دريم كيلو", price:300},
-    {name:"سبريد دريم ميني", price:105},
-    {name:"ماكستيلا كيلو", price:140},
-    {name:"تورتيلا جامبو", price:55},
-    {name:"دبس رمان", price:45},
-    {name:"صويا صوص", price:45},
-    {name:"كبيبه سوري", price:100},
-    {name:"تمر كاجو", price:155},
-    {name:"تمر لوز", price:145},
-    {name:"تكساس ولعتين كيلو", price:130},
-    {name:"هالبينو", price:80},
-    {name:"كاندي اسباني", price:320},
-    {name:"كاندي تركي", price:300}
+    {name:"سبريد بلبن نص", price:140,img:"سبريد-نص.jpg"},
+    {name:"سبريد بلبن كيلو", price:240,img:"سبريد-نص.jpg"},
+    {name:"سبريد دريم كيلو", price:300,img:"s-d.jpg"},
+    {name:"سبريد دريم ميني", price:105,img:"sm.jpg"},
+    {name:"ماكستيلا كيلو", price:140,img:"max.jpg"},
+    {name:"تمر كاجو", price:155,img:"تمركاجو.jpg"},
+    {name:"تمر لوز", price:145,img:"تمرباللوز.jpg"},
+    {name:"كاندي اسباني", price:320,img:"كاندي-اس.jpg"},
+    {name:"كاندي تركي", price:300,img:"كاندي-تركي.jpg"}
   ]
 
 };
