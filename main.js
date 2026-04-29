@@ -230,7 +230,7 @@ const products = {
     {name:"فيليه ولعتين", price:285,img:"فيليه.jpg"},
     {name:"شيش طاوق ولعتين", price:275,img:"شيش.jpg"},
     {name:"بانيه ولعتين", price:280,img:"بانيه--ولعتين.jpeg"},
-    {name:"مسحب ولعتين", price:320,img:"مسحب.jpg"},
+    {name:"مسحب ولعتين", price:330,img:"مسحب.jpg"},
     {name:"سكالوب بانيه ولعتين", price:290,img:"سكالوب.jpeg"}
   ],
 
@@ -255,6 +255,7 @@ const products = {
     {name:"بطاطس كرينكل", price:155,img:"كرينكل.jpg"},
     {name:"بطاطس الوميت", price:155,img:"الوميت.jpg"},
     {name:"بطاطس بوم فريت", price:155,img:"بومفريت.jpg"},
+     {name:"بطاطس فريسكس", price:120,img:".jpg"},
   ],
 
   // 🍤 جمبري
@@ -271,7 +272,7 @@ const products = {
     {name:"توست رده", price:60,img:"رده.jpg"},
     {name:"توست بدون سكر", price:62,img:"توست1.jpg"},
     {name:"توست شوفان", price:70,img:"توست-شوفان.png"},
-    {name:"توست عادي", price:55,img:"توست.jpg"},
+    {name:"توست عادي", price:60,img:"توست.jpg"},
     {name:"تورتيلا جامبو", price:55,img:"تورتيلا جامبو.jpg"},
     {name:"توست حليب", price:60,img:"توست-حليب.jpg"}
   ],
