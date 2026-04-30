@@ -217,6 +217,33 @@ ${itemsText}
 
 const products = {
 
+diet: [
+  {name:"بذور شيا", price:130, img:"بذور-شيا.jpg"},
+  {name:"صوص شوكولاتة زيرو", price:195, img:"شيكولاته-زيرو.jpg"},
+  {name:"صوص كراميل زيرو", price:195, img:"كراميل-زيرو.jpg"},
+  {name:"صوص فراولة زيرو", price:160, img:"فراوله-زيرو.jpg"},
+  {name:"توست رايز ميني", price:25, img:"رايز.jpeg"},
+  {name:"سناكس لايت شيبسي", price:25, img:"شيبسي.jpg"},
+  {name:"خل تفاح", price:240, img:"خل.jpg"},
+  {name:"شاي أخضر", price:265, img:"شاي.jpg"},
+  {name:"بيوريه ميكس توت", price:155, img:"بيوريه-توت.jpg"},
+  {name:"بيوريه فراولة", price:125, img:"بيوريه-فراوله.jpg"},
+  {name:"سبريد زيرو وايت", price:170, img:"زيرو-وايت.jpg"},
+  {name:"سبريد لوتس دايت", price:170, img:"لوتس.jpg"},
+  {name:"شاي بقدونس وكرفس", price:120, img:"شانه.jpg"},
+  {name:"زيرو هيلثي سبريد بروتين", price:170, img:"زيرو-هيلثي.jpg"},
+  {name:"زيرو هيلثي سبريد سوبريم", price:170, img:"سوبريم.jpg"},
+  {name:"جرانولا شوكولاتة صحية", price:160, img:"جرانولا.jpeg"},
+  {name:"جرانولا مكسرات", price:365, img:"جرانولا.jpeg"},
+  {name:"سبريد بندق كيتو", price:170, img:"كيتو.jpg"},
+  {name:"زيست بيبر", price:400, img:"بيبر.jpeg"},
+  {name:"سكر ستيفيا", price:210, img:"ستيفا.jpg"},
+  {name:"بخاخ طهي بالزبدة", price:210, img:"بخاخ.jpg"},
+  {name:"مكرونة دايت", price:70, img:"مكرونه-دايت.jpeg"},
+  {name:"زيت زيتون سيوة", price:300, img:"سيوه.png"},
+  {name:"بسكوت شوفان", price:70, img:"بسكوت.jpg"}
+],
+
   // 🍗 استربس و فراخ
   strips: [
     {name:"استربس ولعتين بارد", price:270,img:"ولعتين1.jpeg"},
@@ -305,6 +332,33 @@ const products = {
     {name:"تكساس ولعتين كيلو", price:130,img:"تكساس-ولعتين.jpg"},
     {name:"هوت صوص ولعتين", price:40,img:"هوت.jpg"}
   ],
+
+  diet: [
+  {name:"بذور شيا", price:130, img:"بذور-شيا.jpg"},
+  {name:"صوص شوكولاتة زيرو", price:195, img:"شيكولاته-زيرو.jpg"},
+  {name:"صوص كراميل زيرو", price:195, img:"كراميل-زيرو.jpg"},
+  {name:"صوص فراولة زيرو", price:160, img:"فراوله-زيرو.jpg"},
+  {name:"توست رايز ميني", price:25, img:"رايز.jpeg"},
+  {name:"سناكس لايت شيبسي", price:25, img:"شيبسي.jpg"},
+  {name:"خل تفاح", price:240, img:"خل.jpg"},
+  {name:"شاي أخضر", price:265, img:"شاي.jpg"},
+  {name:"بيوريه ميكس توت", price:155, img:"بيوريه-توت.jpg"},
+  {name:"بيوريه فراولة", price:125, img:"بيوريه-فراوله.jpg"},
+  {name:"سبريد زيرو وايت", price:170, img:"زيرو-وايت.jpg"},
+  {name:"سبريد لوتس دايت", price:170, img:"لوتس.jpg"},
+  {name:"شاي بقدونس وكرفس", price:120, img:"شانه.jpg"},
+  {name:"زيرو هيلثي سبريد بروتين", price:170, img:"زيرو-هيلثي.jpg"},
+  {name:"زيرو هيلثي سبريد سوبريم", price:170, img:"سوبريم.jpg"},
+  {name:"جرانولا شوكولاتة صحية", price:160, img:"جرانولا.jpeg"},
+  {name:"جرانولا مكسرات", price:365, img:"جرانولا.jpeg"},
+  {name:"سبريد بندق كيتو", price:170, img:"كيتو.jpg"},
+  {name:"زيست بيبر", price:400, img:"بيبر.jpeg"},
+  {name:"سكر ستيفيا", price:210, img:"ستيفا.jpg"},
+  {name:"بخاخ طهي بالزبدة", price:210, img:"بخاخ.jpg"},
+  {name:"مكرونة دايت", price:70, img:"مكرونه-دايت.jpeg"},
+  {name:"زيت زيتون سيوة", price:300, img:"سيوه.png"},
+  {name:"بسكوت شوفان", price:70, img:"بسكوت.jpg"}
+],
 
   // 🛒 ماركت و بقالة
   grocery: [
